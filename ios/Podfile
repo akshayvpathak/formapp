@@ -12,6 +12,8 @@ target 'app' do
 
   if !ENV['CI']
     use_flipper!({ 'Flipper' => '0.80.0' })
+    pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
     post_install do |installer|
       flipper_post_install(installer)
     end
